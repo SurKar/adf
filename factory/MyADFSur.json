@@ -1,0 +1,9 @@
+{
+	"name": "MyADFSur",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "52f0ef2a-d85d-49b1-9d6a-74ae7788af0d",
+		"tenantId": "3e00c08e-fca8-4e5d-a19e-070ceddc463c"
+	}
+}

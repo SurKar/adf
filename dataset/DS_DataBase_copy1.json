@@ -1,0 +1,17 @@
+{
+	"name": "DS_DataBase_copy1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PRacticeDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "EMP"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

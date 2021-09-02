@@ -1,0 +1,54 @@
+{
+	"name": "pipeline13",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://prod-01.northcentralus.logic.azure.com:443/workflows/2e65f4bfaf3d40f586a98e4455552e6c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2S_50taZbSvVSHaEPaNKnsntDS-m5YSYFh2UmsF-iOk",
+					"method": "POST",
+					"headers": {
+						"Connect-Type": "application/jason"
+					},
+					"body": {
+						"value": "{\n\"EmailTo\": \"@{pipeline().parameters.EmailTo}\"\n,\"Subject\": \"@{pipeline().parameters.SubJect}\"\n,\"DataFactoryName\":\"@{pipeline().parameters.DataFactoryName}\"\n,\"PipelineName\":\"@{pipeline().parameters.PipeLineName}\"\n,\"Activity\":\"@{pipeline().parameters.Activity}\"\n,\"ErrorMessage\":\"@{pipeline().parameters.ErrorMessage}\"\n}",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"EmailTo": {
+				"type": "string"
+			},
+			"Activity": {
+				"type": "string"
+			},
+			"ErrorMessage": {
+				"type": "string"
+			},
+			"DataFactoryName": {
+				"type": "string"
+			},
+			"PipeLineName": {
+				"type": "string"
+			},
+			"SubJect": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-08-31T14:28:42Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

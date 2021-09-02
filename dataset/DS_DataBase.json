@@ -1,0 +1,13 @@
+{
+	"name": "DS_DataBase",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PRacticeDB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

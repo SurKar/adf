@@ -1,0 +1,60 @@
+{
+	"name": "pipeline8",
+	"properties": {
+		"activities": [
+			{
+				"name": "Validation1",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "DS_InputFiles",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderName": "input"
+						}
+					},
+					"timeout": "00.00:01:00",
+					"sleep": 10,
+					"childItems": true
+				}
+			},
+			{
+				"name": "success",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Validation1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			},
+			{
+				"name": "failure",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Validation1",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-08-31T07:43:23Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
