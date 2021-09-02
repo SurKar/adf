@@ -4,12 +4,6 @@
 	"parameters": {
 		"factoryName": {
 			"value": "MyADFSur"
-		},
-		"LS_Blob_connectionString": {
-			"value": ""
-		},
-		"LS_PRacticeDB_connectionString": {
-			"value": ""
 		}
 	}
 }
